@@ -1,0 +1,98 @@
+@media screen and (min-width: 992px) {
+    .contactBackg{
+        background: url("https://www.thisbatteredsuitcase.com/wp-content/uploads/2018/02/What-to-Wear-in-Canada-in-Winter-24-of-34.jpg");
+        background-size: 100vw 100vh;
+        height:90vh;
+        width:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        position:absolute;
+    }
+    .contactBack{
+        background: url("https://www.thisbatteredsuitcase.com/wp-content/uploads/2018/02/What-to-Wear-in-Canada-in-Winter-24-of-34.jpg");
+    
+        background-size: 65vw 66vh;
+        height:65vh;
+        width:65%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin:auto;
+        margin-top:12vh;
+        position:relative;
+        display:flex;
+    }
+    .contactBar{
+        width:50%;
+        text-align: center;
+    }
+    .contactBar:nth-child(2){
+        background-color: white;
+        display:flex;
+        flex-direction: column;
+    }
+    .contactFormHeader{
+        margin-top:5%;
+    }
+    .contactForm{
+        width:80%;
+        height:80%;
+        margin:auto;
+    }
+    .contactForm input{
+        width:90%;
+        height:10%;
+        margin-bottom:3%;
+        border-radius: 5px;
+        outline:none;
+        border:none;
+        background-color: rgb(240,240,240);
+        padding:0 5%;
+    }
+    .contactForm textarea{
+        width:90%;
+        height:40%;
+        margin-bottom:3%;
+        border-radius: 5px;
+        outline:none;
+        border:none;
+        background-color: rgb(240,240,240);
+        padding:3% 5%;
+    }
+
+    .contactForm button{
+        width:100%;
+        height:10%;
+        margin-bottom:3%;
+        border-radius: 5px;
+        outline:none;
+        border:none;
+        background-color: rgb(43, 41, 41);
+        color:white;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+    .contactForm button:hover{
+        background-color: black;
+    }
+
+}
+/*@media screen and (min-width: 992px) {
+    .contactBack{
+        background: url("https://www.thisbatteredsuitcase.com/wp-content/uploads/2018/02/What-to-Wear-in-Canada-in-Winter-24-of-34.jpg");
+        background-size: 100vw 100vh;
+        height:91vh;
+        width:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position:absolute;
+    }
+    .contactBar{
+        background-color: rgba(0,0,0,0.5);
+        width:50%;
+        height:80%;
+        text-align: center;
+        margin:auto;
+    }
+}*/

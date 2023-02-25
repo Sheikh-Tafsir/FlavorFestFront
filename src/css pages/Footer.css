@@ -1,0 +1,117 @@
+*{
+    font:Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 992px) {
+    .footerIconBarBack{
+        background-color: black;
+        width:100%;
+        height:9vh;
+        margin-bottom: 3vh;
+    }
+    .footerIconBar{
+        width:20%;
+        margin:auto;
+        text-align: center;
+    }
+    .footerIcons{
+        color:white;
+        font-size: 1.5rem;
+        margin:7.5% 7%;
+        transition: linear 0.1s;
+    }
+    .footerIcons:hover{
+        transform: scale(1.2);
+    }
+    .footerOpts{
+        display:flex;
+        margin-bottom: 6vh;
+    }
+    .footerOpt{
+        width:25%;
+        display:flex;
+        flex-direction: column;
+        font-weight:550 ;
+        font-size: 0.8em;
+        border-right: 1px solid black;
+        padding-left: 5%;
+    }
+    .footerCopyright{
+        background-color: black;
+        color:white;
+        font-size: 1em;
+        height:6vh;
+        text-align: center;
+        line-height: 6vh;
+    }
+}
+@media screen and (max-width: 991px) {
+    .footerIconBarBack{
+        background-color: black;
+        width:100%;
+        height:9vh;
+        margin-bottom: 3vh;
+    }
+    .footerIconBar{
+        width:60%;
+        margin:auto;
+        text-align: center;
+    }
+    .footerIcons{
+        color:white;
+        font-size: 1.5rem;
+        margin:10% 5%;
+        transition: linear 0.1s;
+    }
+    .footerOpts{
+        display:flex;
+        width:100%;
+        margin-bottom: 3vh;
+        
+    }
+    .footerOpt{
+        width:25%;
+        display:flex;
+        flex-direction: column;
+        font-weight:550 ;
+        font-size: 0.8em;
+        border-right: 1px solid black;
+        padding-left: 2%;
+        
+    }
+    .footerOpt:nth-child(1){
+        width:30%;
+    }
+    .footerOpt:nth-child(2){
+        width:22%;
+    }
+    .footerOpt:nth-child(3){
+        width:27%;
+    }
+    .footerOpt:nth-child(4){
+        width:21%;
+    }
+    .footerCopyright{
+        background-color: black;
+        color:white;
+        font-size: 1em;
+        height:6vh;
+        text-align: center;
+        line-height: 6vh;
+    }
+}
+
+.footerOpt p{
+    font-size:1.3rem;
+    margin-bottom: 3vh;
+}
+.footerOpt a{
+    text-decoration: none;
+    color:rgb(80,80,80);
+    font-size: 1rem;
+    margin-bottom: 0.7vh;
+    font-weight: 450;
+}
+.footerOpt a:hover{
+    color:black;
+}
