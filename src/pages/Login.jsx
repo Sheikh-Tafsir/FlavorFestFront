@@ -63,13 +63,13 @@ const Login = () => {
         
         Axios.post('http://localhost:8000/api/login', 
         {
-            username:username,
+            name:username,
             password:password
         },
         {
             withCredentials: true
-        },
-        /*{
+        }
+        /*,{
             headers: {
               //'X-CSRF-TOKEN': csrfToken
               

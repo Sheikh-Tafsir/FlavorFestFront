@@ -11,33 +11,14 @@ const Signup = () => {
     const [ profile, setProfile ] = useState(null);
     const clientId = '1000835904597-ut38ah9s6238riqo9iv189fpcje1fc37.apps.googleusercontent.com';
     const [username, setUsername] = useState("");
+    const [useremail, setUseremail] = useState("");
     const [password, setPassword] = useState("");
     const [regStatus, setRegStatus] = useState("");
 
     let localStorageUsername=localStorage.getItem("localStorageUsername");
     let localStorageLoggedState=localStorage.getItem("localStorageLoggedState");
 
-        //signup user using credentials and save to server
-        const signupUser = () => {
-            Axios.post('http://localhost:8080/signup',{
-                username:username,
-                password:password
-            }).then((response) =>{
-                if(response.data===0){
-                    setRegStatus("user already exists");
-                }
-                else if(response.data === 1){
-                    setRegStatus("user data saved");
-                    localStorage.setItem("localStorageUsername",username);
-                    localStorage.setItem("localStorageLoggedState",1);
-                    //window.open("/dashboard", "_top");
-                    window.open("/", "_top");
-                }
-            });
-
-        document.querySelector(".signfrm").reset();
-        //alert("succ");
-    }; 
+    const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
         const initClient = () => {
@@ -47,8 +28,67 @@ const Signup = () => {
             });
         };
         gapi.load('client:auth2', initClient);
+
+        Axios.get('http://localhost:8000/api/csrf-token')
+        .then(response => {
+            //setCsrfToken(response.data["csrfToken"]);
+            setCsrfToken(response.data)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
         if(localStorageLoggedState==1)window.location.href = "/";
     });
+
+    const updateCsrfToken = ()=> {
+        Axios.get('http://localhost:8000/api/csrf-token')
+          .then(response => {
+            setCsrfToken(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    };
+
+        //signup user using credentials and save to server
+    const signupUser = () => {
+        Axios.post('http://localhost:8000/api/signup',
+        {
+            name:username,
+            email:useremail,
+            password:password
+        },
+        {
+            withCredentials: true
+        }
+        ).then((response) =>{
+            //alert(JSON.stringify(response.data["success"]));
+            if(JSON.stringify(response.data["success"]==="false")){
+                setRegStatus("user already exists");
+            }
+            else if(JSON.stringify(response.data["success"] === "true")){
+                setRegStatus("user data saved");
+                localStorage.setItem("localStorageUsername",username);
+                localStorage.setItem("localStorageLoggedState",1);
+                //window.open("/dashboard", "_top");
+                window.open("/", "_top");
+            }
+        }).catch(error => {
+            console.error(error);
+            if (error.response.status === 419) {
+                // If the CSRF token is invalid or has expired, generate a new token and try again
+                setRegStatus("CSRF token expired, please try again.");
+                setCsrfToken('');
+                updateCsrfToken();
+            }
+        });
+
+        document.querySelector(".signupform").reset();
+        //alert("succ");
+    }; 
+
+    
 
     const onSuccess = (res) => {
         setProfile(res.profileObj);
@@ -74,7 +114,7 @@ const Signup = () => {
                 </div>
                 <div className="signupCreds">
                     <FaRegAddressBook className ="signupCredsIcons"/>
-                    <input type="text" id="name" name="name" placeholder="Insert name" onChange={(event) => {setUsername(event.target.value);} }/><br/>
+                    <input type="text" id="email" name="email" placeholder="Insert email" onChange={(event) => {setUseremail(event.target.value);} }/><br/>
                 </div>
                 <div className="signupCreds">
                     <FaRegAddressBook className ="signupCredsIcons"/>
