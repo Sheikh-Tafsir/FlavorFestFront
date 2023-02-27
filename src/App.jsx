@@ -14,6 +14,7 @@ import Heromain from './pages/Heromain';
 import Footer from './pages/Footer';
 import Contacts from './pages/Contacts';
 import Products from './pages/Products';
+import Fastfood from './pages/Fastfood';
 
 const App = () =>{
   return (
@@ -31,6 +32,7 @@ const App = () =>{
           <Route path="contacts" element={<Contacts/>}/>
           <Route path="products" element={<Products/>}/>
           <Route path="footer" element={<Footer/>}/>
+          <Route path="fastfood" element={<Fastfood/>}/>
           <Route path='*' element={<Notfound/>} />
         </Routes>
       </BrowserRouter>

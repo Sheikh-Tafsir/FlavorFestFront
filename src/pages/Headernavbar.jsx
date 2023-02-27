@@ -42,6 +42,7 @@ const Headernavbar = () => {
     console.log("Logout successful");
     localStorage.setItem("localStorageLoggedState",0);
     localStorage.setItem("localStorageUsername",null); 
+    localStorage.setItem("localStorageMenuCart",null); 
     /*window.open("/", "_top");*/
     window.location.href = "/";
     //alert(localStorageLoggedState +"yes");
@@ -90,7 +91,7 @@ const Headernavbar = () => {
         <div className="headnavbar" data-aos="fade-down">
           <div className="navbarMenu">
               <Link to="/" className="navbarMenuOpt">Home</Link>
-              <Link to="/products" className="navbarMenuOpt">Products</Link>
+              <a href="#products" className="navbarMenuOpt">Products</a>
               <Link to="/contacts" className="navbarMenuOpt">Contacts</Link>
               <Link to="/dashboard" className="navbarMenuOpt">Profile</Link>
           </div>

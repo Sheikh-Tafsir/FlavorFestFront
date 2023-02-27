@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 *{
     font:Arial, Helvetica, sans-serif;
 }
@@ -26,6 +27,7 @@
     .footerOpts{
         display:flex;
         margin-bottom: 6vh;
+        
     }
     .footerOpt{
         width:25%;
@@ -102,8 +104,12 @@
 }
 
 .footerOpt p{
-    font-size:1.3rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+
+    font-size:1.5rem;
     margin-bottom: 3vh;
+
 }
 .footerOpt a{
     text-decoration: none;

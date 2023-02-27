@@ -16,22 +16,22 @@ const Footer = () => {
                 <Link to="#"><FaTwitter className="footerIcons" /></Link>
             </div>
         </div>
-        <div class="footerOpts">
-            <div class="footerOpt">
+        <div className="footerOpts">
+            <div className="footerOpt">
                 <p>Resources</p>
                 <a href="#">Application</a>
                 <a href="#">Documentation</a>
                 <a href="#">Systema</a>
                 <a href="#">FAQ</a>
             </div>
-            <div class="footerOpt">
+            <div className="footerOpt">
                 <p>Pricing</p>
                 <a href="#">Overview</a>
                 <a href="#">Premium PLans</a>
                 <a href="#">Affiliate Program</a>
                 <a href="#">Promotions</a>
             </div>
-            <div class="footerOpt">
+            <div className="footerOpt">
                 <p>Company</p>
                 <a href="#">Home</a>
                 <a href="#">About Us</a>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <a href="#">Career</a>
                 <a href="#">Press</a>
             </div>
-            <div class="footerOpt">
+            <div className="footerOpt">
                 <p>Social</p>
                 <a href="#">Facebook</a>
                 <a href="#">Twitter</a>
@@ -47,7 +47,7 @@ const Footer = () => {
                 <a href="#">LinkedIn</a>
             </div>
         </div>
-        <div class="footerCopyright">
+        <div className="footerCopyright">
             <p>All rights reserved by Mr sheikh</p>
         </div>
     </>

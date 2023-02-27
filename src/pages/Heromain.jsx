@@ -8,11 +8,15 @@ const Heromain = () => {
         <div className="heromainBackground">
 
         </div>
+        <div className="heromanAbout">
+          <h1>Welcome to The Best Cafe in VA!</h1>
+          <p>A gathering place in Downtown Farmville! Stop by and enjoy coffee, tea, live music, soups, salad, sandwiches, ice cream and much more!</p>
+        </div>
         
-        <div className="heromainBackgroundSec">
+        <div className="heromainBackgroundSec" id="products">
           <div className="heromainBackgroundSecParts">
             <div className="heromainBackgroundSecPartsBack">
-              <Link to="/" className="heromainBackgroundSecPartsLink">Fast Food</Link><br/>
+              <Link to="/fastfood" className="heromainBackgroundSecPartsLink">Fast Food</Link><br/>
             </div>
           </div>
           <div className="heromainBackgroundSecParts">
