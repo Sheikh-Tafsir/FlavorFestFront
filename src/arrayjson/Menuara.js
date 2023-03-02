@@ -39,5 +39,45 @@ const Menuara = [
         desc: "Fullstack webapp to book doctor appointments using html css js php",
         price: "200"
     },
+    {
+        id: 6,
+        category: "setmenu",
+        image: "https://www.kitchensanctuary.com/wp-content/uploads/2020/04/Chicken-Fried-Rice-square-FS-.jpg",
+        name: "Chicken fried rice",
+        desc: "Fullstack webapp to book doctor appointments using html css js php",
+        price: "150"
+    },
+    {
+        id: 7,
+        category: "setmenu",
+        image: "https://www.dhakafoodster.com/wp-content/uploads/2021/07/Madchef%E2%80%99s-Achari-Rice-Meal.jpg",
+        name: "Achari rice",
+        desc: "Fullstack webapp to book doctor appointments using html css js php",
+        price: "160"
+    },
+    {
+        id: 8,
+        category: "setmenu",
+        image: "https://www.foodandwine.com/thmb/Tb8S9GekQYj-Obp4wbECxK7F9bQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/201205-xl-beef-fried-rice-2000-c6158a82ec494f77b1e2b75c434bb0f7.jpg",
+        name: "Beef rice",
+        desc: "Fullstack webapp to book doctor appointments using html css js php",
+        price: "170"
+    },
+    {
+        id: 9,
+        category: "setmenu",
+        image: "https://www.dhakafoodster.com/wp-content/uploads/2021/09/Tradition-BD-Kacchi-Combo-Meal11.png",
+        name: "Kacchi",
+        desc: "Fullstack webapp to book doctor appointments using html css js php",
+        price: "190"
+    },
+    {
+        id: 10,
+        category: "setmenu",
+        image: "https://cookishcreation.com/wp-content/uploads/2022/05/Beef-Khichuri.jpg",
+        name: "Beef khichuri",
+        desc: "Fullstack webapp to book doctor appointments using html css js php",
+        price: "200"
+    },
 ]
 export default Menuara;

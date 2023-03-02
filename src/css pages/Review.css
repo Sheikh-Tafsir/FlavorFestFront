@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.review{
+    height:65vh;
+    background-color: rgb(238,238,238);
+    text-align: center;
+}
+.review h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    padding-top: 5vh;
+    margin-bottom: 2vh;
+}
+.review p{
+    width:80%;
+    margin: auto;
+    margin-bottom: 4vh;
+}
+.reviewCardBar{
+    display:flex;
+    flex-direction: row;
+    /* overflow-x: auto;
+    white-space: nowrap; */
+    margin-left: 8vw;
+}
+.reviewCard{
+    background-color: white;
+    border-radius:10px;
+    width:25vw;
+    height:34vh;
+    margin-right:3vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid black;
+}
+
+.reviewCard img{
+    height:30%;
+    width:22%;
+    margin-top:4vh;
+    margin-bottom: 2vh;
+    border-radius:50%;
+}
+.reviewCard h3{
+    margin-bottom: 1.5vh;
+}
+.reviewCard p{
+    
+    margin-left:1.5rem;
+    margin-top:-0.5rem;
+    margin-bottom: 1.5rem;
+}

@@ -63,19 +63,26 @@ const Signup = () => {
             withCredentials: true
         }
         ).then((response) =>{
-            //alert(JSON.stringify(response.data["success"]));
-            if(JSON.stringify(response.data["success"]==="false")){
-                setRegStatus("user already exists");
-            }
-            else if(JSON.stringify(response.data["success"] === "true")){
+            //alert(response.data["success"]);
+            if(response.data["success"] == true){
                 setRegStatus("user data saved");
                 localStorage.setItem("localStorageUsername",username);
                 localStorage.setItem("localStorageLoggedState",1);
                 //window.open("/dashboard", "_top");
-                window.open("/", "_top");
+                window.location.href = "/";
+                
+            }
+            else if(response.data["success"] == false){
+                setRegStatus("user already exists");
+            }
+            else{
+                setRegStatus("Some problem occured, please try again");
             }
         }).catch(error => {
             console.error(error);
+            setRegStatus("CSRF token expired, please try again.");
+            setCsrfToken('');
+            updateCsrfToken();
             if (error.response.status === 419) {
                 // If the CSRF token is invalid or has expired, generate a new token and try again
                 setRegStatus("CSRF token expired, please try again.");
@@ -94,7 +101,7 @@ const Signup = () => {
         setProfile(res.profileObj);
         localStorage.setItem("localStorageLoggedState",1);
         localStorage.setItem("localStorageUsername",res.profileObj.name);
-        window.location.href = "/service";
+        window.location.href = "/";
 
     };
 

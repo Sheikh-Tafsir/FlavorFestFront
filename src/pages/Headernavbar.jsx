@@ -2,14 +2,17 @@ import {React,useEffect,useState} from 'react'
 import { Button } from 'react-bootstrap';
 import {Link, NavLink} from "react-router-dom";
 import "../css pages/Headernavbar.css"
+import "../css pages/Shoppingcart.css"
 import {BsPerson, BsCart3} from "react-icons/bs"
 import {HiBars3} from "react-icons/hi2"
 import {FaRegAddressBook} from "react-icons/fa"
 import {IoLogInOutline, IoSearchOutline} from "react-icons/io5"
 import {SlLogout} from "react-icons/sl"
-import logo from '../images/logo.png';
+import logo from "../images/FLogo.png"
 import { useGoogleLogout, GoogleLogout } from "react-google-login";
 import { gapi } from 'gapi-script';
+
+import Shoppingcart from './Shoppingcart';
 
 const Headernavbar = () => {
   
@@ -76,6 +79,24 @@ const Headernavbar = () => {
   navbarLoginButs.addEventListener('mouseout',()=>{
     navbarLoginButs.classList.remove("navbarLoginButs-toggle");
   });*/
+
+  const shoppingCartSlideIn = () =>{
+    const element = document.querySelector('.shoppingCart');
+    element.classList.add("shoppingCartSlideIn");
+
+    
+    if (element !== null) {
+      // element is found, do something with it
+      //alert("found");
+      
+    } else {
+      // element is not found, handle the case
+      //alert("hu");
+    }
+  }
+
+
+
   useEffect(() => {
     const initClient = () => {
         gapi.client.init({
@@ -102,7 +123,7 @@ const Headernavbar = () => {
           
           <div className="navbarIcon">
             <div><IoSearchOutline className ="navbarIcons"/></div>
-            <div><BsCart3 className ="navbarIcons"></BsCart3></div>
+            <div><BsCart3 className ="navbarIcons navbarIconsCart" onClick={shoppingCartSlideIn}></BsCart3></div>
             <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons"></BsPerson>
               <div className="navbarLoginButs">
                 {(localStorageLoggedState==1)?

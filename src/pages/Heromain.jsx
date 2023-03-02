@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import {Link, NavLink} from "react-router-dom";
 import "../css pages/Heromain.css"
+import logo from "../images/FLogo.png"
 const Heromain = () => {
   return (
     <>
@@ -21,7 +22,7 @@ const Heromain = () => {
           </div>
           <div className="heromainBackgroundSecParts">
             <div className="heromainBackgroundSecPartsBack">
-              <Link to="/" className="heromainBackgroundSecPartsLink">Set Menu</Link><br/>
+              <Link to="/setmenu" className="heromainBackgroundSecPartsLink">Set Menu</Link><br/>
             </div>
           </div>
         </div>

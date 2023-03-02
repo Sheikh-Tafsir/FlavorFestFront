@@ -86,7 +86,7 @@ const Login = () => {
                 setLoginStatus("logging in");
                 localStorage.setItem("localStorageUsername",username);
                 localStorage.setItem("localStorageLoggedState",1);
-                window.open("/service", "_top");
+                window.open("/", "_top");
             }
         })
         .catch(error => {
