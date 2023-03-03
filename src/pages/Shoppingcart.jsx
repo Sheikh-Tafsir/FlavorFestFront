@@ -41,7 +41,18 @@ const Shoppingcart = () => {
             withCredentials: true
         }
         ).then((response) =>{
-            setOrderStatus(response.data);
+            if(response.data["success"] == true){
+                setOrderStatus("order placed");
+                setCartItems();
+                localStorage.setItem("localStorageMenuCart",null);
+                window.location.reload(false);
+            }
+            else if(response.data["success"] == false){
+                setOrderStatus(response.data["message"]);   
+            }
+            else{
+                setOrderStatus(response.data);
+            }
         });
     }
 
@@ -99,7 +110,10 @@ const Shoppingcart = () => {
                  </div>
                 ) : 
                 (
-                    <p>Your cart is empty.</p>
+                    <div>
+                        <p className="orderStatus">{orderStatus}</p>
+                        <p></p>
+                    </div>
                 )
             }
             

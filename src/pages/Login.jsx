@@ -60,7 +60,7 @@ const Login = () => {
     const loginUser = () => {        
         
         //alert("hu "+ csrfToken);
-        
+        setLoginStatus("please wait...");
         Axios.post('http://localhost:8000/api/login', 
         {
             name:username,

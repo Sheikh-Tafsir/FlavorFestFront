@@ -53,6 +53,7 @@ const Signup = () => {
 
         //signup user using credentials and save to server
     const signupUser = () => {
+        setRegStatus("please wait...");
         Axios.post('http://localhost:8000/api/signup',
         {
             name:username,
@@ -76,7 +77,7 @@ const Signup = () => {
                 setRegStatus("user already exists");
             }
             else{
-                setRegStatus("Some problem occured, please try again");
+                setRegStatus(response.data);
             }
         }).catch(error => {
             console.error(error);
