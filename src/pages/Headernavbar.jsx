@@ -126,7 +126,7 @@ const Headernavbar = () => {
             <div><BsCart3 className ="navbarIcons navbarIconsCart" onClick={shoppingCartSlideIn}></BsCart3></div>
             <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons"></BsPerson>
               <div className="navbarLoginButs">
-                {(localStorageLoggedState==1)?
+                {(localStorageLoggedState>=1)?
                     <>
                       <div><SlLogout className ="navbarLoginButsIcons"/><Button className ="navbarLoginButsName" onClick={logOut}>Logout</Button></div>
                       {/*

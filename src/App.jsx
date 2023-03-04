@@ -18,6 +18,7 @@ import Products from './pages/Products';
 import Fastfood from './pages/Fastfood';
 import Setmenu from './pages/Setmenu';
 import Shoppingcart from './pages/Shoppingcart'
+import Adminpanel from './pages/Adminpanel';
 
 const App = () =>{
   return (
@@ -38,6 +39,7 @@ const App = () =>{
           <Route path="fastfood" element={<Fastfood/>}/>
           <Route path="setmenu" element={<Setmenu/>}/>
           <Route path="shoppingcart" element={<Shoppingcart/>}/>
+          <Route path="adminpanel" element={<Adminpanel/>}/>
           <Route path='*' element={<Notfound/>} />
         </Routes>
       </BrowserRouter>
