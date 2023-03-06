@@ -124,7 +124,7 @@ const Headernavbar = () => {
           <div className="navbarIcon">
             <div><IoSearchOutline className ="navbarIcons"/></div>
             <div><BsCart3 className ="navbarIcons navbarIconsCart" onClick={shoppingCartSlideIn}></BsCart3></div>
-            <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons"></BsPerson>
+            <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons navbarIconsPers"></BsPerson>
               <div className="navbarLoginButs">
                 {(localStorageLoggedState>=1)?
                     <>

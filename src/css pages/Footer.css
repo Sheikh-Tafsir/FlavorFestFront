@@ -12,13 +12,14 @@
     }
     .footerIconBar{
         width:20%;
+        height: 100%;
         margin:auto;
         text-align: center;
     }
     .footerIcons{
         color:white;
-        font-size: 1.5rem;
-        margin:7.5% 7%;
+        font-size: 3vh;
+        margin:3vh 1.5vw;
         transition: linear 0.1s;
     }
     .footerIcons:hover{
@@ -27,24 +28,23 @@
     .footerOpts{
         display:flex;
         margin-bottom: 6vh;
-        
     }
     .footerOpt{
         width:25%;
         display:flex;
         flex-direction: column;
-        font-weight:550 ;
-        font-size: 0.8em;
+        /* font-weight:550 ;
+        font-size: 5.8em; */
         border-right: 1px solid black;
         padding-left: 5%;
     }
     .footerCopyright{
         background-color: black;
         color:white;
-        font-size: 1em;
+        font-size: 2.2vh;
         height:6vh;
         text-align: center;
-        line-height: 6vh;
+        line-height: 5.5vh;
     }
 }
 @media screen and (max-width: 991px) {
@@ -106,15 +106,15 @@
 .footerOpt p{
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
-
-    font-size:1.5rem;
+    font-size:2.5vmax;
     margin-bottom: 3vh;
+    color:red;
 
 }
 .footerOpt a{
     text-decoration: none;
     color:rgb(80,80,80);
-    font-size: 1rem;
+    font-size:2.5vmin;
     margin-bottom: 0.7vh;
     font-weight: 450;
 }

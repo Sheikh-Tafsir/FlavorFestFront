@@ -20,9 +20,9 @@
     .signupform h2{
         color:white;
         text-align: center;
-        padding-top:14%;
-        margin-bottom:10%;
-        font-size:2rem;
+        padding-top:7vh;
+        margin-bottom:7vh;
+        font-size:5vh;
     }
     .signupCreds{
         border-bottom:1.5px solid #FFFFFF;
@@ -34,15 +34,17 @@
         color:white;
     }
     .signupCredsIcons{
+        font-size: 2.5vmin;
         transform: translateY(20%);
     }
     .signupform input{
         color:white;
-        padding-left: 4%;
+        width:85%;
+        padding-left: 5%;
         border:none;
         outline: none;
         background-color: transparent;
-        font-size: 1rem;
+        font-size: 2.5vh;
     }
     .signupform input::placeholder {
         color:#bbbbbb;
@@ -51,27 +53,28 @@
         background-color: transparent;
         border:1px solid white;
         color:white;
-        height:8%;
+        height:5vh;
         width:70%;
-        font-size:1.2rem;
+        font-size:2.5vh;
         font-weight: bold;
     }   
     .signupform h3{
         color:white;
-        font-size: 1.5rem;
-        margin-top:1% ;
-        margin-bottom:2% ;
+        font-size: 2vh;
+        margin-top:1vh ;
+        margin-bottom:2vh ;
     }
     .googleLoginBut{
-        width: 45%;
         text-align: center;
-        margin-bottom: 5%;
+        margin-bottom: 1vh;
     }
-    .logToReg{
+    .signToLog{
+        line-height: 10vh;
+        font-size: 2.2vh;
         color:#dedede;
         
     }
-    .logToReg:hover{
+    .signToLog:hover{
         color:#d10000;
     }
 
