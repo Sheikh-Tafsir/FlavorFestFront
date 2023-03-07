@@ -15,6 +15,7 @@
         top:0%;
         transition: linear 0.5s; 
         
+        
     }
     .sticky{
         position: sticky;
@@ -71,12 +72,12 @@
         height:50%;   
     }
     .navbarLoginButs{
-        width:13vw;
+        width:8vw;
         height:9vh;
         display:flex;
         flex-direction: column;
         background-color: white;
-        transform: translate(-11.5vw,10vh);
+        transform: translate(-7vw,10vh);
         transition: linear 0.3s;  
         visibility: hidden;
         cursor:pointer;
@@ -84,7 +85,7 @@
         
     }
     .navbarLoginActiveButs:hover .navbarLoginButs{
-        transform: translate(-11.5vw,2vh);
+        transform: translate(-7vw,2vh);
         visibility: visible;
     }
     .navbarIconsPers{

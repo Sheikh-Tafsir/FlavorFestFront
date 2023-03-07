@@ -29,7 +29,7 @@ const Fastfood = () => {
         setCartItems(JSON.parse(localStorageMenuCart))
       }
     }
-  });
+  }, [localStorageMenuCart, localStorageLoggedState]);
 
   const addToCart = (item) => {
       const itemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
@@ -119,20 +119,7 @@ const Fastfood = () => {
                 )
               }
             })}
-        </div>
-        {/*cartItems.length > 0 ? (
-                                <ul>
-                                {cartItems.map((cartItem) => (
-                                    <li key={cartItem.id}>
-                                    <span>name: {cartItem.name}</span>
-                                    <span> quantity: {cartItem.prodCount}</span>
-                                    </li>
-                                ))}
-                                </ul>
-                            ) : (
-                                <p>Your cart is empty.</p>
-                            )*/}
-        
+        </div>        
         <Footer/>
     </>
   )

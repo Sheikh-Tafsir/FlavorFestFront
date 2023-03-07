@@ -69,7 +69,7 @@ const Shoppingcart = () => {
             setCartItems(JSON.parse(localStorageMenuCart))
           }
         }
-      });
+      }, [localStorageMenuCart, localStorageLoggedState]);
 
   return (
     <>
@@ -82,10 +82,9 @@ const Shoppingcart = () => {
             {cartItems.length > 0 ? 
                 (
                 <div>
-                    <ul>
                         {cartItems.map((cartItem) => (
-                            <div className="cartItemCard" key={cartItem.id}>
-                                <div className="cartItemCardImg">
+                            <div className="cartItemCard" key={cartItem.name}>
+                                <div className="cartItemCardImg" >
                                     <img src={cartItem.image}></img>
                                 </div>
                                 <div className="cartItemCardDesc">
@@ -100,7 +99,7 @@ const Shoppingcart = () => {
                                 </div>
                             </div>
                         ))}
-                    </ul>
+                    
                     <div className="shoppingCartBal">
                         <p>Sum Total: </p>
                         <p>Tk {sum_total}/=</p>

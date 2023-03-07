@@ -29,7 +29,7 @@ const Setmenu = () => {
           setCartItems(JSON.parse(localStorageMenuCart))
         }
       }
-    });
+    }, [localStorageMenuCart, localStorageLoggedState]);
 
     const addToCart = (item) => {
         const itemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
@@ -120,23 +120,6 @@ const Setmenu = () => {
               }
             })}
         </div>
-        {/*cartItems.length > 0 ? (
-                                <ul>
-                                {cartItems.map((cartItem) => (
-                                    <li key={cartItem.id}>
-                                    <span>image: {cartItem.image}</span>
-                                    <img src={cartItem.image}></img>
-                                    <span>name: {cartItem.name}</span>
-                                    <span> quantity: {cartItem.prodCount}</span>
-                                    <span> price: {cartItem.price}</span>
-                                    </li>
-                                ))}
-                                </ul>
-                            ) : (
-                                <p>Your cart is empty.</p>
-        )*/}
-        
-        
         <Footer/>
     </>
   )
