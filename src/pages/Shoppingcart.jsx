@@ -1,8 +1,6 @@
 import {React,useState,useEffect } from 'react';
 import Axios from 'axios';
-import {Link, NavLink} from "react-router-dom";
 import { Button } from 'react-bootstrap';
-import {HiBars3} from "react-icons/hi2"
 import {AiOutlineClose} from "react-icons/ai"
 import "../css pages/Shoppingcart.css"
 
@@ -16,19 +14,24 @@ const Shoppingcart = () => {
     let localStorageLoggedState=localStorage.getItem("localStorageLoggedState");
     let sum_total=0;
 
+    useEffect(() => {
+        if(localStorageLoggedState==0){
+  
+        }
+        else{
+            // alert("cart "+ localStorageMenuCart);
+            if(localStorageMenuCart != "null"){
+                setCartItems(JSON.parse(localStorageMenuCart))
+            }
+        }
+    }, [localStorageMenuCart, localStorageLoggedState]);
+
     //shopping cart slides in
     const shoppingCartSlideIn = () =>{
         const element = document.querySelector('.shoppingCart');
         element.classList.remove("shoppingCartSlideIn");
     }
 
-    //to remove a item from cart
-    const removeCartItem = (item) => {
-        //alert("hi");
-        const newCartItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
-        setCartItems(newCartItems);
-        localStorage.setItem("localStorageMenuCart",JSON.stringify(newCartItems));
-    };
     const placeOrder = () => {
         //alert(localStorageUsername + " " + localStorageMenuCart + " " + sum_total);
         Axios.post('http://localhost:8000/api/orders', 
@@ -56,21 +59,36 @@ const Shoppingcart = () => {
         });
     }
 
-    useEffect(() => {
-        //alert(localStorageMenuCart);
-        //alert(localStorageLoggedState);
-        if(localStorageLoggedState==0){
+    const decreaseCartItem = (item) => {
+        if(localStorageLoggedState==1){
+          const itemIndex = cartItems.find((cartItem) => cartItem.name === item.name);
+          //alert(JSON.stringify([itemIndex["prodCount"]]));
+          if (!itemIndex){
   
-        }
-        else{
-          //alert(localStorageMenuCart);
-          if(localStorageMenuCart != "null"){
-            //alert("hww")
-            setCartItems(JSON.parse(localStorageMenuCart))
+          }
+          else if ([itemIndex["prodCount"]] == 1) {
+            removeCartItem(item);
+            //alert(JSON.stringify(localStorageMenuCart));
+          } 
+          else {
+              const newCartItems = [...cartItems];
+              const ind=newCartItems.indexOf(itemIndex);
+              //alert(JSON.stringify(newCartItems[ind]["prodCount"]));
+              newCartItems[ind]["prodCount"]=parseInt(newCartItems[ind]["prodCount"]) -1;
+              setCartItems(newCartItems);
+              localStorage.setItem("localStorageMenuCart",JSON.stringify(newCartItems));
           }
         }
-      }, [localStorageMenuCart, localStorageLoggedState]);
+      };
 
+    //to remove a item from cart
+    const removeCartItem = (item) => {
+        const newCartItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
+        setCartItems(newCartItems);
+        localStorage.setItem("localStorageMenuCart",JSON.stringify(newCartItems));
+        // alert(localStorageMenuCart);
+        window.location.reload(false);
+    };
   return (
     <>
 
@@ -79,7 +97,7 @@ const Shoppingcart = () => {
             <AiOutlineClose className="shoppingCartCloseBut" onClick={shoppingCartSlideIn}/>
 
             {/*localStorageMenuCart*/}
-            {cartItems.length > 0 ? 
+            { cartItems !== null && cartItems.length > 0 ? 
                 (
                 <div>
                         {cartItems.map((cartItem) => (

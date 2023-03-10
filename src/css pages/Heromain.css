@@ -153,5 +153,157 @@
         font-weight: bold;
         font-family: 'Dancing Script', cursive;
     }
-    
+}
+
+@media screen and (max-width: 991px) {
+    .heromainBackground{
+        background-image: url("../images/picante-food-website-template.jpg");
+        background-size: 100vw 100vh;
+        height:100vh;
+        width:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .heromanAbout{
+        text-align: center;
+        height:35vh;
+    }
+    .heromanAbout h1{
+        font-family: 'Dancing Script', cursive;
+        font-size: 6vh;
+        padding-top:1vh;
+        padding-bottom: 0vh;
+    }
+    .heromanAbout p{
+        font-size: 2.5vh;
+        font-family: 'Golos Text', sans-serif;
+        word-spacing: 2px;
+        letter-spacing: 0.5px;
+        width:90%;
+        margin:auto;
+        color:rgb(20,20,20);
+
+    }
+
+    .heromainBackgroundSec{
+        width:100%;
+        height:50vh;
+        display:flex;
+        justify-content: space-evenly;
+        margin: 1vh 0;
+    }
+
+    .heromainBackgroundSecParts{
+        width:49%;
+        position: relative;
+        text-align: center;
+    }
+    .heromainBackgroundSecParts:nth-child(1){
+        background-image: url("https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: 100% 100%;
+        height:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        
+
+    }
+    .heromainBackgroundSecParts:nth-child(2){
+        background-image: url("https://images.pexels.com/photos/7758253/pexels-photo-7758253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: 130% 100%;
+        height:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;   
+    }
+    .heromainBackgroundSecPartsBack{
+        height:100%;
+        width: 100%;
+        transition: 0.3s;      
+        background-color: rgba(0,0,0,0.2);  
+    }
+    .heromainBackgroundSecPartsBack:hover{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .heromainBackgroundSecPartsLink{
+        font-size: 5vh;
+        text-decoration: none;
+        color:white;    
+        position: relative;
+        top:37%;
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .heromainBackgroundThi{
+        background-image: url("https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg");
+        background-size: 65vw 90vh;
+        width:65%;
+        height:50vh;
+        background-repeat: no-repeat;
+        overflow: hidden;   
+        margin:0 0.75vw;
+    }
+    .heromainBackgroundThiBack{
+        height:100%;
+        width: 100%;
+        transition: 0.3s;   
+        text-align: center; 
+        background-color: rgba(0,0,0,0.2);  
+    }
+    .heromainBackgroundThiBack:hover{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .heromainBackgroundThiLink{
+        font-size: 5vh;
+        text-decoration: none;
+        color:white;    
+        position: relative;
+        top:40%;
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .heromainBackgroundFor{
+        width:100%;
+        height:50vh;
+        display:flex;
+        justify-content: space-evenly;
+        margin: 1vh 0;
+    }
+    .heromainBackgroundForParts{
+        width:49%;
+        position: relative;
+        text-align: center;
+    }
+    .heromainBackgroundForParts:nth-child(1){
+        background-image: url("https://images.pexels.com/photos/12318206/pexels-photo-12318206.jpeg?auto=compress&cs=tinysrgb&w=600");
+        background-size: 100% 100%;
+        height:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .heromainBackgroundForParts:nth-child(2){
+        background-image: url("https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg?auto=compress&cs=tinysrgb&w=600");
+        background-size: 110% 100%;
+        height:100%;
+        background-repeat: no-repeat;
+        overflow: hidden;   
+    }
+    .heromainBackgroundForPartsBack{
+        height:100%;
+        width: 100%;
+        transition: 0.3s;   
+        background-color: rgba(0,0,0,0.2);       
+    }
+    .heromainBackgroundForPartsBack:hover{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .heromainBackgroundForPartsLink{
+        font-size: 5vh;
+        text-decoration: none;
+        color:white;    
+        position: relative;
+        top:37%;
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+    }
 }

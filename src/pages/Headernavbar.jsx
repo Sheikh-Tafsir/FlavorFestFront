@@ -20,7 +20,9 @@ const Headernavbar = () => {
   let localStorageLoggedState=localStorage.getItem("localStorageLoggedState");
 
   const clientId = '1000835904597-ut38ah9s6238riqo9iv189fpcje1fc37.apps.googleusercontent.com';
-
+  var navMenuSlideCount=0;
+  var loginMenuSlideCount=0;
+  
   //headnavbar sticky when load or scrolled
   window.addEventListener("scroll",function(){
     var header=document.querySelector(".headnavbar");
@@ -30,6 +32,7 @@ const Headernavbar = () => {
     var header=document.querySelector(".headnavbar");
     header.classList.toggle("sticky",window.scrollY > 90);
   });
+  
 
   //
   const logOut = () => {
@@ -73,12 +76,6 @@ const Headernavbar = () => {
   }
 
   var navbarLoginButs=document.querySelector(".navbarLoginButs");
-  /*navbarLoginButs.addEventListener('mouseover',()=>{
-    navbarLoginButs.classList.add("navbarLoginButs-toggle");
-  });
-  navbarLoginButs.addEventListener('mouseout',()=>{
-    navbarLoginButs.classList.remove("navbarLoginButs-toggle");
-  });*/
 
   const shoppingCartSlideIn = () =>{
     const element = document.querySelector('.shoppingCart');
@@ -95,7 +92,29 @@ const Headernavbar = () => {
     }
   }
 
+  const navMenuSlideIn = () =>{
+    const element = document.querySelector('.navbarMenu');
+    navMenuSlideCount=(navMenuSlideCount+1)%2;
+    if(navMenuSlideCount&1){
+      element.classList.add("navMenuSlideIn");
+    }
+    else{
+      element.classList.remove("navMenuSlideIn");
+    }
+  }
 
+  const loginMenuSlideIn = () =>{
+    const element = document.querySelector('.navbarLoginButs');
+    loginMenuSlideCount=(loginMenuSlideCount+1)%2;
+    if(loginMenuSlideCount&1){
+      element.classList.add("loginMenuSlideIn");
+    }
+    else{
+      element.classList.remove("loginMenuSlideIn");
+    }
+  }
+
+  
 
   useEffect(() => {
     const initClient = () => {
@@ -124,7 +143,7 @@ const Headernavbar = () => {
           <div className="navbarIcon">
             <div><IoSearchOutline className ="navbarIcons"/></div>
             <div><BsCart3 className ="navbarIcons navbarIconsCart" onClick={shoppingCartSlideIn}></BsCart3></div>
-            <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons navbarIconsPers"></BsPerson>
+            <div className="navbarLoginActiveButs"><BsPerson className ="navbarIcons navbarIconsPers" onClick={loginMenuSlideIn}></BsPerson>
               <div className="navbarLoginButs">
                 {(localStorageLoggedState>=1)?
                     <>
@@ -152,7 +171,7 @@ const Headernavbar = () => {
           </div>
           
           <div className="navbarToggleButton">
-            <HiBars3></HiBars3>
+            <HiBars3 className ="navbarIconsBars" onClick={navMenuSlideIn}></HiBars3>
           </div>
         </div>
     </>

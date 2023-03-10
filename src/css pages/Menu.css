@@ -1,72 +1,147 @@
+@media screen and (min-width: 992px) {
+    .foodMenuBar{
+        background-color: rgb(238,238,238);
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 7vh;
+    }
+    .foodMenu{
+        width:22%;
+        height:60vh;
+        margin-bottom: 5vh;
+        background-color: white;
+        border-radius: 5px;
+        transition:linear 0.1s;
+    }
+    .foodMenu:hover{
+        transform:translateY(1vh);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .foodImage{
+        width:100%;
+        height:60%;
+        margin:auto;
+        margin-bottom: 1vh;
+    }
+    .foodImage img{
+        width:88%;
+        height:90%;
+        margin-left:6%;
+        margin-top:6%;
+        border-radius: 8px;
+    }
+    .foodDesc{
+        width:86%;
+        margin:auto;
+    }
+    .foodDesc h2{
+        font-size: 1.5rem;
+        margin-bottom: 1vh;
+        font-weight: 600;
+    }
+    .foodDesc h3{
+        font-size: 1.1rem;
+        margin-bottom: 1vh;
+        font-weight: 500;
+    }
+    .foodDesc p{
 
-.foodMenuBar{
-    background-color: rgb(238,238,238);
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 7vh;
-}
-.foodMenu{
-    width:22%;
-    height:60vh;
-    margin-bottom: 5vh;
-    background-color: white;
-    border-radius: 5px;
-    transition:linear 0.1s;
-}
-.foodMenu:hover{
-    transform:translateY(1vh);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-.foodImage{
-    width:100%;
-    height:60%;
-    margin:auto;
-    margin-bottom: 1vh;
-}
-.foodImage img{
-    width:88%;
-    height:90%;
-    margin-left:6%;
-    margin-top:6%;
-    border-radius: 8px;
-}
-.foodDesc{
-    width:86%;
-    margin:auto;
-}
-.foodDesc h2{
-    font-size: 1.5rem;
-    margin-bottom: 1vh;
-    font-weight: 600;
-}
-.foodDesc h3{
-    font-size: 1.1rem;
-    margin-bottom: 1vh;
-    font-weight: 500;
-}
-.foodDesc p{
+    }
+    .foodDescButt{
+        width:60%;
+        height:6%;
+        display:flex;
+        justify-content: space-evenly;
+        margin:auto;
 
+    }
+    .foodDescButt button{
+        height:100%;
+        width:40%;
+        font-size: 1.8rem;
+        background-color: rgb(30,30,30);
+        color:white;
+        line-height: 3vh;
+        border: none;
+        
+    }
+    .foodDescButt button:hover{
+        background-color: rgb(80,80,80);
+    }
 }
-.foodDescButt{
-    width:60%;
-    height:6%;
-    display:flex;
-    justify-content: space-evenly;
-    margin:auto;
 
-}
-.foodDescButt button{
-    height:100%;
-    width:40%;
-    font-size: 1.8rem;
-    background-color: rgb(30,30,30);
-    color:white;
-    line-height: 3vh;
-    border: none;
-    
-}
-.foodDescButt button:hover{
-    background-color: rgb(80,80,80);
+@media screen and (max-width: 991px) {
+    .foodMenuBar{
+        background-color: rgb(238,238,238);
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 7vh;
+    }
+    .foodMenu{
+        width:45%;
+        height:50vh;
+        margin-bottom: 5vh;
+        background-color: white;
+        border-radius: 5px;
+        transition:linear 0.1s;
+    }
+    .foodMenu:hover{
+        transform:translateY(1vh);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .foodImage{
+        width:100%;
+        height:40%;
+        margin:auto;
+        margin-bottom: 1vh;
+    }
+    .foodImage img{
+        width:88%;
+        height:90%;
+        margin-left:6%;
+        margin-top:10%;
+        border-radius: 8px;
+    }
+    .foodDesc{
+        width:86%;
+        margin:auto;
+    }
+    .foodDesc h2{
+        font-size: 1.5rem;
+        margin-bottom: 1vh;
+        font-weight: 600;
+    }
+    .foodDesc h3{
+        font-size: 1.1rem;
+        margin-bottom: 1vh;
+        font-weight: 500;
+    }
+    .foodDesc p{
+
+    }
+    .foodDescButt{
+        width:60%;
+        height:6%;
+        display:flex;
+        justify-content: space-evenly;
+        margin:auto;
+
+    }
+    .foodDescButt button{
+        height:100%;
+        width:40%;
+        font-size: 1.8rem;
+        background-color: rgb(30,30,30);
+        color:white;
+        line-height: 3vh;
+        border: none;
+        
+    }
+    .foodDescButt button:hover{
+        background-color: rgb(80,80,80);
+    }
 }

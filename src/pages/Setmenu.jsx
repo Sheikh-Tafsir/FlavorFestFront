@@ -1,7 +1,4 @@
 import {React,useState,useEffect } from 'react';
-import Axios from 'axios';
-import {Link, NavLink} from "react-router-dom";
-import { Button } from 'react-bootstrap';
 import Headernavbar from './Headernavbar';
 import Footer from './Footer';
 import Menuara from '../arrayjson/Menuara'
@@ -17,15 +14,12 @@ const Setmenu = () => {
     let localStorageLoggedState=localStorage.getItem("localStorageLoggedState");
 
     useEffect(() => {
-      //alert(localStorageMenuCart);
-      //alert(localStorageLoggedState);
       if(localStorageLoggedState==0){
 
       }
       else{
-        //alert(localStorageMenuCart);
+        // alert(localStorageMenuCart);
         if(localStorageMenuCart != "null"){
-          //alert("hww")
           setCartItems(JSON.parse(localStorageMenuCart))
         }
       }
@@ -44,10 +38,9 @@ const Setmenu = () => {
       };
 
       const decreaseCartItem = (item) => {
-        if(localStorageLoggedState==1){
-          const itemIndex = cartItems.find((cartItem) => cartItem.name === item.name);
-          //alert(JSON.stringify([itemIndex["prodCount"]]));
-          if (!itemIndex){
+        if(localStorageLoggedState==1 && cartItems.length > 0 && JSON.stringify(cartItems)!=null ){
+          const itemIndex = cartItems && cartItems.find((cartItem) => cartItem.name === item.name);
+          if (!itemIndex || JSON.stringify(itemIndex)=="undefined" || JSON.stringify(itemIndex)=="null"){
 
           }
           else if ([itemIndex["prodCount"]] == 1) {
@@ -64,25 +57,32 @@ const Setmenu = () => {
           }
         }
       };
-    
+  
+
       const increaseCartItem = (item) => {
-        //alert(localStorageLoggedState);
+        //alert("cart" + JSON.stringify(cartItems));  
         if(localStorageLoggedState==1){
-          //alert("hi0");
-          const itemIndex = cartItems.find((cartItem) => cartItem.name === item.name);
-          if (!itemIndex){
-              setCartItems([...cartItems,{name:item.name,prodCount:"1",price:item.price,image:item.image}])
-              localStorage.setItem("localStorageMenuCart",JSON.stringify([...cartItems,{name:item.name,prodCount:"1",price:item.price,image:item.image}]));
+          if(JSON.stringify(cartItems)=="null" || JSON.stringify(cartItems)=="undefined"){
+            setCartItems([{name:item.name,prodCount:"1",price:item.price,image:item.image}]);
           }
-          else{ 
-              const newCartItems = [...cartItems];
-              const ind=newCartItems.indexOf(itemIndex);
-              //alert(JSON.stringify(newCartItems[ind]["prodCount"]));
-              newCartItems[ind]["prodCount"]=parseInt(newCartItems[ind]["prodCount"]) +1;
-              setCartItems(newCartItems);
-              localStorage.setItem("localStorageMenuCart",JSON.stringify(newCartItems));
-              //alert((localStorageMenuCart));
+          else{
+            const itemIndex = cartItems.find((cartItem) => cartItem.name === item.name);
+            //alert(JSON.stringify(itemIndex));
+            if (!itemIndex || JSON.stringify(itemIndex)=="undefined" || JSON.stringify(itemIndex)=="null"){
+                setCartItems([...cartItems,{name:item.name,prodCount:"1",price:item.price,image:item.image}])
+                localStorage.setItem("localStorageMenuCart",JSON.stringify([...cartItems,{name:item.name,prodCount:"1",price:item.price,image:item.image}]));
+            }
+            else{ 
+                const newCartItems = [...cartItems];
+                const ind = itemIndex ? newCartItems.indexOf(itemIndex) : -1;
+                if (ind !== -1) {
+                  newCartItems[ind]["prodCount"] = parseInt(newCartItems[ind]["prodCount"]) + 1;
+                  setCartItems(newCartItems);
+                  localStorage.setItem("localStorageMenuCart", JSON.stringify(newCartItems));
+                }
+            }
           }
+          
         }
       };
     
